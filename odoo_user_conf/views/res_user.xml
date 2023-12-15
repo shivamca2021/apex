@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_users_form" model="ir.ui.view">
+            <field name="name">res.users.form</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='company_id']" position="after">
+                	<field string="Allowed Brand" name="allowed_brand" widget="many2many_tags" options="{'no_create': True}"/>
+                    <field string="Default Brand" name="default_brand_id" options="{'no_create': True}"/>
+                    <field string="Allowed shop" name="allowed_shop" widget="many2many_tags" options="{'no_create': True}"/>
+                    <field string="Default shop" name="default_shop_id" options="{'no_create': True}"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>
